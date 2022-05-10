@@ -1,10 +1,3 @@
-<!-- <img [src]="imageUrl" />
-<table>
-  <tr>
-    <td [attr.rcolspan]="colSpan"></td>
-  </tr>
-</table> -->
-
-<!-- <button class="btn btn-primary" [class.active]="isActive">Save</button> -->
-
-<button [style.backgroundColor]="isActive ? 'blue' : 'white'">Save</button>
+<div (click)="onDivClicked()">
+  <button (click)="onSave($event)">Save</button>
+</div>

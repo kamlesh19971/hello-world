@@ -6,5 +6,12 @@ import { Component } from "@angular/core";
 })
 export class CoursesComponent {
 
-    isActive = true;
+    onDivClicked() {
+        console.log("Div was Clicked");
+
+    }
+    onSave($event: any) {
+        $event.stopPropagation();
+        console.log("Button  Was Clicked", $event);
+    }
 } 
