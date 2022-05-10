@@ -6,8 +6,7 @@ import { Component } from "@angular/core";
 })
 export class CoursesComponent {
 
-    onKeyUp($event: any) {
-        // if ($event.keyCode === 13)
-        console.log("Enter was pressed");
+    onKeyUp(email: string) {
+        console.log(email);
     }
 } 
