@@ -4,3 +4,7 @@
   [class.glyphicon-star-empty]="!isFavorite"
   (click)="onClick()"
 ></span>
+
+<button (click)="onClick()">
+  {{ isFavorite ? "UnLike" : "Like" }}
+</button>
