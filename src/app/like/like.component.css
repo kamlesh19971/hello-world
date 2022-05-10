@@ -1,0 +1,10 @@
+
+.btn {
+    color: #ccc;
+    cursor: pointer;
+    border: 1px solid red;
+}
+
+.highlighted {
+    color: deeppink;
+}

@@ -1,0 +1,5 @@
+<button class="btn" (click)="onClick()" [class.highlighted]="isActive">
+  {{ isActive ? "UnLike" : "Like" }}
+</button>
+
+<span>{{ likesCount }}</span>
