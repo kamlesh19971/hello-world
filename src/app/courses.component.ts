@@ -5,8 +5,9 @@ import { Component } from "@angular/core";
     templateUrl: './courses.component.html',
 })
 export class CoursesComponent {
+    email: string = 'kamlesh@gmail.com';
 
-    onKeyUp(email: string) {
-        console.log(email);
+    onKeyUp() {
+        console.log(this.email);
     }
 } 
