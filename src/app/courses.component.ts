@@ -6,12 +6,8 @@ import { Component } from "@angular/core";
 })
 export class CoursesComponent {
 
-    onDivClicked() {
-        console.log("Div was Clicked");
-
-    }
-    onSave($event: any) {
-        $event.stopPropagation();
-        console.log("Button  Was Clicked", $event);
+    onKeyUp($event: any) {
+        // if ($event.keyCode === 13)
+        console.log("Enter was pressed");
     }
 } 
