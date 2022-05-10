@@ -5,9 +5,12 @@ import { Component } from "@angular/core";
     templateUrl: './courses.component.html',
 })
 export class CoursesComponent {
-    email: string = 'kamlesh@gmail.com';
 
-    onKeyUp() {
-        console.log(this.email);
+    course = {
+        title: "The Complete Angular Course",
+        rating: 4.9745,
+        students: 30123,
+        price: 190.95,
+        releaseDate: new Date(2016, 3, 1)
     }
 } 

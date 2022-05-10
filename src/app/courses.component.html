@@ -1,1 +1,5 @@
-<input [(ngModel)]="email" (keyup.enter)="onKeyUp()" />
+{{ course.title | uppercase | lowercase }} <br />
+{{ course.students | number }} <br />
+{{ course.rating | number: "2.1-1" }} <br />
+{{ course.price | currency: "INR":true:"3.2-2" }} <br />
+{{ course.releaseDate | date: "shortDate" }} <br />
