@@ -5,12 +5,5 @@ import { Component } from "@angular/core";
     templateUrl: './courses.component.html',
 })
 export class CoursesComponent {
-
-    course = {
-        title: "The Complete Angular Course",
-        rating: 4.9745,
-        students: 30123,
-        price: 190.95,
-        releaseDate: new Date(2016, 3, 1)
-    }
+    text = "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Tenetur, delectus soluta illo accusamus amet neque temporibus ipsam dignissimos fuga enim consequuntur placeat repudiandae quam ratione eius nisi repellendus animi, error aut minus modi expedita veniam! Quia, culpa rem cupiditate voluptatibus dolor aliquam neque iure amet at consequuntur magnam aut itaque?";
 } 
