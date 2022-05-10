@@ -5,6 +5,12 @@
   (click)="onClick()"
 ></span> -->
 
-<button (click)="onClick()">
+<style>
+  .btn {
+    color: blue;
+  }
+</style>
+
+<button class="btn" (click)="onClick()">
   {{ isSelected ? "UnLike" : "Like" }}
 </button>
