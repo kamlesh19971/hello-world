@@ -1,5 +1,10 @@
 import { Component } from '@angular/core';
 
+interface Course {
+  id: number;
+  name: string;
+}
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -7,22 +12,18 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
 
-  courses = [
-    { id: 1, name: 'course1' },
-    { id: 2, name: 'course2' },
-    { id: 3, name: 'course3' }
-  ];
+  courses: Course[] = [];
 
-  onAdd() {
-    const id = this.courses.length + 1;
-    this.courses.push({ id: id, name: `course${id}` });
+  loadCourses() {
+    this.courses = [
+      { id: 1, name: 'course1' },
+      { id: 2, name: 'course2' },
+      { id: 3, name: 'course3' }
+    ];
+
   }
 
-  onRemove(index: number) {
-    this.courses.splice(index, 1);
-  }
-
-  onChange(course: any) {
-    course.name = "Updated";
+  trackCourse(index: number, course: Course) {
+    return course ? course.id : undefined;
   }
 }
