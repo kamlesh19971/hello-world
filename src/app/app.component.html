@@ -1,18 +1,5 @@
-<!-- <img [src]="imageUrl" />
-<button (click)="onClick()"></button> -->
+<div *ngIf="courses.length > 0; then coursesList; else noCourses"></div>
+<ng-template #coursesList> List Of Course </ng-template>
+<ng-template #noCourses> No Courses Yet. </ng-template>
 
-<!-- <h1>Hello World</h1>
-<app-favorite
-  [isFavorite]="post.isFavorite"
-  (change)="onFavoriteChanged($event)"
-></app-favorite> -->
-
-<!-- <bootstrap-panel>
-  <ng-container class="heading">Heading</ng-container>
-  <ng-container class="body">
-    <h2>Body</h2>
-    <p>Some Content here.</p>
-  </ng-container>
-</bootstrap-panel> -->
-
-<like [likesCount]="tweet.likesCount" [isActive]="tweet.isLiked"></like>
+<!-- <div *ngIf="courses.length === 0">No Courses Yet.</div> -->

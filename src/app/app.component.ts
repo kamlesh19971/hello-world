@@ -9,11 +9,6 @@ import { FavoriteChangedEventArgs } from './favorite/favorite.component';
 })
 export class AppComponent {
 
-  tweet = {
-    body: "Hello world",
-    isLiked: true,
-    likesCount: 5
-  }
-
+  courses = [1, 2];
 
 }
