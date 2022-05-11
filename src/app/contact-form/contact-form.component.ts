@@ -10,7 +10,11 @@ export class ContactFormComponent {
 
   log(x: NgModel) {
     console.log(x);
+  }
 
+  jsonKeys(obj: Object) {
+    console.log(Object.keys(obj));
+    ;
   }
 
 }
