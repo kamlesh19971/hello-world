@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { NgModel } from '@angular/forms';
+import { NgForm, NgModel } from '@angular/forms';
 
 @Component({
   selector: 'contact-form',
@@ -12,9 +12,9 @@ export class ContactFormComponent {
     console.log(x);
   }
 
-  jsonKeys(obj: Object) {
-    console.log(Object.keys(obj));
-    ;
+  submit(f: NgForm) {
+    console.log(f);
+
   }
 
 }
