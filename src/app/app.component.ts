@@ -1,6 +1,4 @@
 import { Component } from '@angular/core';
-import { FavoriteChangedEventArgs } from './favorite/favorite.component';
-
 
 @Component({
   selector: 'app-root',
@@ -9,6 +7,11 @@ import { FavoriteChangedEventArgs } from './favorite/favorite.component';
 })
 export class AppComponent {
 
-  courses = [1, 2];
+  viewMode = 'someThingElse';
+
+
+  changeViewMode(value: string) {
+    this.viewMode = value;
+  }
 
 }
