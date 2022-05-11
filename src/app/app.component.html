@@ -1,7 +1,7 @@
-<button (click)="loadCourses()">Load Courses</button>
-
-<ul>
-  <li *ngFor="let course of courses; index as i; trackBy: trackCourse">
-    {{ course!.name }}
-  </li>
-</ul>
+<div *ngIf="courses.length > 0; else noCourses"></div>
+<ng-template [ngIf]="courses.length > 0">
+  <div>List Of Course</div></ng-template
+>
+<ng-template [ngIf]="!(courses.length > 0)">
+  <div>No Courses Yet.</div>
+</ng-template>
