@@ -1,8 +1,10 @@
 import { Component } from '@angular/core';
 
-interface Course {
-  id: number;
-  name: string;
+interface Task {
+  title: string;
+  assignee: {
+    name: string;
+  } | null | undefined
 }
 
 @Component({
@@ -12,5 +14,11 @@ interface Course {
 })
 export class AppComponent {
 
-  canSave = true;
+  task: Task = {
+    title: 'Review Applications',
+    assignee: null
+    // {
+    //   name: 'John Smith'
+    // }
+  }
 }
