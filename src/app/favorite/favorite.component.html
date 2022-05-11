@@ -6,11 +6,22 @@
 ></span> -->
 
 <style>
-  .btn {
+  .btn-blue {
     color: blue;
+  }
+
+  .btn-green {
+    color: green;
   }
 </style>
 
-<button class="btn" (click)="onClick()">
+<button
+  class="btn"
+  [ngClass]="{
+    'btn-green': !isSelected,
+    'btn-blue': isSelected
+  }"
+  (click)="onClick()"
+>
   {{ isSelected ? "UnLike" : "Like" }}
 </button>
