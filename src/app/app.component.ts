@@ -13,5 +13,16 @@ export class AppComponent {
     { id: 3, name: 'course3' }
   ];
 
+  onAdd() {
+    const id = this.courses.length + 1;
+    this.courses.push({ id: id, name: `course${id}` });
+  }
 
+  onRemove(index: number) {
+    this.courses.splice(index, 1);
+  }
+
+  onChange(course: any) {
+    course.name = "Updated";
+  }
 }
