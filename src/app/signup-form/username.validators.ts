@@ -2,8 +2,6 @@ import { AbstractControl, ValidationErrors } from "@angular/forms";
 
 export class UserNamValidators {
 
-    static users: string[] = [];
-
     static cannotContainSpace(control: AbstractControl): ValidationErrors | null {
 
         if ((control.value as string).indexOf(' ') >= 0)
@@ -12,16 +10,18 @@ export class UserNamValidators {
         return null;
     }
 
-    static shouldBeUnique(control: AbstractControl): ValidationErrors | null {
+    static shouldBeUnique(control: AbstractControl): Promise<ValidationErrors | null> {
 
-        setTimeout(() => {
-            console.log('ok');
-            if (this.users.findIndex(x => x == control.value) != -1) {
-                return { shouldBeUnique: true }
-            }
-            return null;
+        return new Promise((resolve, reject) => {
 
-        }, 2000);
-        return null;
+            setTimeout(() => {
+                console.log('ok');
+                if (control.value === "mosh") {
+                    resolve({ shouldBeUnique: true });
+                }
+                else reject(null);
+
+            }, 2000);
+        });
     }
 }

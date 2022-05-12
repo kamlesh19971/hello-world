@@ -21,6 +21,10 @@
       <div *ngIf="username?.errors?.['cannotContainSpace']">
         Username does not have space.
       </div>
+
+      <div *ngIf="username?.errors?.['shouldBeUnique']">
+        Username alredy taken
+      </div>
     </div>
   </div>
   <div class="form-group">
