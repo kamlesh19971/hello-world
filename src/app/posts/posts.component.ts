@@ -27,9 +27,17 @@ export class PostsComponent {
     this.http.post(this.url, JSON.stringify(post))
       .subscribe(response => {
 
-        post.id = response.json().id;
         console.log(response.json());
+        post.id = response.json().id;
         this.posts.splice(0, 0, post);
+      });
+  }
+
+  updatePost(post: any) {
+    this.http.patch(this.url + '/' + post.id, JSON.stringify({ isRead: true }))
+      // this.http.put(this.url, post)
+      .subscribe(response => {
+        console.log(response.json());
       });
   }
 }
