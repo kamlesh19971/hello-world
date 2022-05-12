@@ -1,4 +1,4 @@
-<form [formGroup]="form" (ngSubmit)="submit()">
+<form [formGroup]="form">
   <div class="form-group">
     <label>old Passwod</label>
     <input type="text" formControlName="oldPassword" class="form-control" />
@@ -36,7 +36,16 @@
     <label>Confirm Passwod</label>
     <input type="text" formControlName="confirmPassword" class="form-control" />
 
-    <div *ngIf="match" class="alert alert-danger">Passwords does not match</div>
+    <div
+      *ngIf="
+        confirmPassword?.valid &&
+        form.invalid &&
+        form.errors?.['passwordsShouldMatch']
+      "
+      class="alert alert-danger"
+    >
+      Passwords does not match
+    </div>
     <div
       class="alert alert-danger"
       *ngIf="confirmPassword?.touched && confirmPassword?.invalid"
