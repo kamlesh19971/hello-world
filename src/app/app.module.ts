@@ -8,7 +8,7 @@ import { CoursesComponent } from './courses.component';
 import { CoursesService } from './courses.service';
 import { AuthorsComponent } from './authors/authors.component';
 import { AuthorsService } from './authors.service';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { SummaryPipe } from './summary.pipe';
 import { FavoriteComponent } from './favorite/favorite.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
@@ -18,6 +18,7 @@ import { LikeComponent } from './like/like.component';
 import { InputFormatDirective } from './input-format.directive';
 import { ZippyComponent } from './zippy/zippy.component';
 import { ContactFormComponent } from './contact-form/contact-form.component';
+import { SignupFormComponent } from './signup-form/signup-form.component';
 
 @NgModule({
   declarations: [
@@ -32,13 +33,15 @@ import { ContactFormComponent } from './contact-form/contact-form.component';
     LikeComponent,
     InputFormatDirective,
     ZippyComponent,
-    ContactFormComponent
+    ContactFormComponent,
+    SignupFormComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    FontAwesomeModule
+    FontAwesomeModule,
+    ReactiveFormsModule
 
   ],
   providers: [
