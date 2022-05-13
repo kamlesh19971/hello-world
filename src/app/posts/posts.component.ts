@@ -13,17 +13,13 @@ import { PostService } from '../services/post.service';
 export class PostsComponent implements OnInit {
 
   posts: any[] = [];
-  private url = 'http://jsonplaceholder.typicode.com/posts';
 
   constructor(private service: PostService) {
   }
 
   ngOnInit(): void {
-    this.service.getPosts()
-      .subscribe(response => {
-        console.log(response.json());
-        this.posts = response.json();
-      });
+    this.service.getAll()
+      .subscribe(posts => this.posts = posts);
   }
 
 
@@ -31,10 +27,10 @@ export class PostsComponent implements OnInit {
     let post: any = { title: input.value };
     input.value = "";
 
-    this.service.createPost(post)
-      .subscribe(response => {
-        console.log(response.json());
-        post.id = response.json().id;
+    this.service.create(post)
+      .subscribe(newPost => {
+
+        post.id = newPost.id;
         this.posts.splice(0, 0, post);
       }, (error: AppError) => {
 
@@ -48,17 +44,15 @@ export class PostsComponent implements OnInit {
 
   updatePost(post: any) {
     // this.http.put(this.url, post)
-    this.service.updatePost({ isRead: true })
-      .subscribe(response => {
-        console.log(response.json());
+    this.service.update({ isRead: true })
+      .subscribe(updatedPost => {
+        console.log(updatedPost);
       });
   }
 
   deletePost(post: any) {
-    this.service.deletePost(345)
-      .subscribe(response => {
-        console.log(response.json());
-
+    this.service.delete(345)
+      .subscribe(() => {
         let index = this.posts.indexOf(post);
         this.posts.splice(index, 1);
       }, (error: AppError) => {
