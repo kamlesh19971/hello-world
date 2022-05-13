@@ -21,6 +21,9 @@ export class DataService {
     }
 
     create(resource: any) {
+
+        // return throwError(new AppError());
+
         return this.http.post(this.url, JSON.stringify(resource))
             .pipe(
                 map(res => res.json()),
@@ -37,6 +40,7 @@ export class DataService {
     }
 
     delete(id: number) {
+
         return this.http.delete(this.url + '/' + id)
             .pipe(
                 map(res => res.json()),
