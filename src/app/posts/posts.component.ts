@@ -20,6 +20,9 @@ export class PostsComponent implements OnInit {
       .subscribe(response => {
         console.log(response.json());
         this.posts = response.json();
+      }, error => {
+        alert('An Unexpected error occurred.')
+        console.log(error);
       });
   }
 
@@ -33,6 +36,9 @@ export class PostsComponent implements OnInit {
         console.log(response.json());
         post.id = response.json().id;
         this.posts.splice(0, 0, post);
+      }, error => {
+        alert('An Unexpected error occurred.')
+        console.log(error);
       });
   }
 
@@ -41,6 +47,9 @@ export class PostsComponent implements OnInit {
     this.service.updatePost({ isRead: true })
       .subscribe(response => {
         console.log(response.json());
+      }, error => {
+        alert('An Unexpected error occurred.')
+        console.log(error);
       });
   }
 
@@ -51,6 +60,9 @@ export class PostsComponent implements OnInit {
 
         let index = this.posts.indexOf(post);
         this.posts.splice(index, 1);
+      }, error => {
+        alert('An Unexpected error occurred.')
+        console.log(error);
       });
   }
 }
