@@ -5,7 +5,7 @@ import { map } from 'rxjs';
 import { AppError } from '../common/app-error';
 import { BadInput } from '../common/bad-input';
 import { NotFoundError } from '../common/not-found-error';
-
+import { retry } from 'rxjs';
 
 export class DataService {
 
@@ -40,10 +40,11 @@ export class DataService {
     }
 
     delete(id: number) {
-
         return this.http.delete(this.url + '/' + id)
+            // .toPromise()
             .pipe(
                 map(res => res.json()),
+                retry(3),
                 catchError(this.handleError)
             )
     }
