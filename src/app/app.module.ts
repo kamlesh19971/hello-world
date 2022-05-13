@@ -23,6 +23,7 @@ import { NewCourseFormComponent } from './new-course-form/new-course-form.compon
 import { ChangePasswodFormComponent } from './change-passwod-form/change-passwod-form.component';
 import { PostsComponent } from './posts/posts.component';
 import { HttpModule } from '@angular/http';
+import { PostService } from './services/post.service';
 
 @NgModule({
   declarations: [
@@ -53,7 +54,8 @@ import { HttpModule } from '@angular/http';
   ],
   providers: [
     CoursesService,
-    AuthorsService
+    AuthorsService,
+    PostService
   ],
   bootstrap: [AppComponent]
 })
