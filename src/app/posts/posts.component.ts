@@ -23,9 +23,6 @@ export class PostsComponent implements OnInit {
       .subscribe(response => {
         console.log(response.json());
         this.posts = response.json();
-      }, error => {
-        alert('An Unexpected error occurred.')
-        console.log(error);
       });
   }
 
@@ -44,9 +41,7 @@ export class PostsComponent implements OnInit {
         console.log(error);
         if (error instanceof BadInput) {
           // this.form.setErrors(error.originalError);
-        } else {
-          alert('An Unexpected error occurred.')
-        }
+        } else throw error;
 
       });
   }
@@ -56,9 +51,6 @@ export class PostsComponent implements OnInit {
     this.service.updatePost({ isRead: true })
       .subscribe(response => {
         console.log(response.json());
-      }, error => {
-        alert('An Unexpected error occurred.')
-        console.log(error);
       });
   }
 
@@ -74,10 +66,7 @@ export class PostsComponent implements OnInit {
         console.log(error);
         if (error instanceof NotFoundError) {
           alert("This post has already been deleted")
-        } else {
-          alert('An Unexpected error occurred.')
-
-        }
+        } else throw error;
 
       });
   }

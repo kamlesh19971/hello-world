@@ -12,7 +12,7 @@ import { NotFoundError } from '../common/not-found-error';
 })
 export class PostService {
 
-  private url = 'http://jsonplaceholder.typicode.com/posts';
+  private url = 'http://abcjsonplaceholder.typicode.com/posts';
 
   constructor(private http: Http) { }
 
