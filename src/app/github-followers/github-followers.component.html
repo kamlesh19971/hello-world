@@ -1,0 +1,31 @@
+<!-- <div *ngFor="let follower of followers" class="media">
+  <div class="media-left">
+    <a href="#">
+      <img
+        src="{{ follower.avatar_url }}"
+        alt="..."
+        class="media-object avatar"
+      />
+    </a>
+  </div>
+  <div class="media-body">
+    <h4 class="media-heading">{{ follower.login }}</h4>
+    <a href="{{ follower.html_url }}"> {{ follower.html_url }}</a>
+  </div>
+</div> -->
+
+<div class="d-flex align-items-center" *ngFor="let follower of followers">
+  <div class="flex-shrink-0">
+    <a href="#">
+      <img
+        src="{{ follower.avatar_url }}"
+        alt="..."
+        class="media-object avatar"
+      />
+    </a>
+  </div>
+  <div class="flex-grow-1 ms-3">
+    <h4 class="media-heading">{{ follower.login }}</h4>
+    <a href="{{ follower.html_url }}"> {{ follower.html_url }}</a>
+  </div>
+</div>
