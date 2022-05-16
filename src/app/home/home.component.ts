@@ -7,6 +7,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
+
+  archives = [
+    { year: 2021, month: 1 },
+    { year: 2021, month: 2 },
+    { year: 2021, month: 3 }
+  ];
+
   constructor() { }
 
   ngOnInit() {
