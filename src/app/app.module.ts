@@ -1,6 +1,6 @@
 import { ErrorHandler, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
+import { RouterModule } from '@angular/router';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CourseComponent } from './course/course.component';
@@ -27,6 +27,10 @@ import { PostService } from './services/post.service';
 import { AppErrorHandler } from './common/app-error-handler';
 import { GithubFollowersComponent } from './github-followers/github-followers.component';
 import { GithubFollowersService } from './services/github-followers.service';
+import { NavbarComponent } from './navbar/navbar.component';
+import { HomeComponent } from './home/home.component';
+import { NotFoundComponent } from './not-found/not-found.component';
+import { GithubProfileComponent } from './github-profile/github-profile.component';
 
 @NgModule({
   declarations: [
@@ -46,7 +50,11 @@ import { GithubFollowersService } from './services/github-followers.service';
     NewCourseFormComponent,
     ChangePasswodFormComponent,
     PostsComponent,
-    GithubFollowersComponent
+    GithubFollowersComponent,
+    NavbarComponent,
+    HomeComponent,
+    GithubProfileComponent,
+    NotFoundComponent,
   ],
   imports: [
     BrowserModule,
@@ -54,7 +62,14 @@ import { GithubFollowersService } from './services/github-followers.service';
     FormsModule,
     FontAwesomeModule,
     ReactiveFormsModule,
-    HttpModule
+    HttpModule,
+    RouterModule.forRoot([
+      { path: '', component: HomeComponent },
+      { path: 'followrers/:username', component: GithubProfileComponent },
+      { path: 'followrers', component: GithubFollowersComponent },
+      { path: 'posts', component: PostsComponent },
+      { path: '**', component: NotFoundComponent }
+    ]),
   ],
   providers: [
     CoursesService,
@@ -62,9 +77,10 @@ import { GithubFollowersService } from './services/github-followers.service';
     PostService,
     GithubFollowersService,
     {
-      provide: ErrorHandler, useClass: AppErrorHandler
-    }
+      provide: ErrorHandler,
+      useClass: AppErrorHandler,
+    },
   ],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
 export class AppModule { }
